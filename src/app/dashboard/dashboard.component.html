@@ -1,0 +1,44 @@
+<h2 style="background-color: rgb(7, 7, 70);text-align: center;color: white;padding: 15px;">Electric Vehicle Population</h2>
+
+<div style="display: flex; justify-content: space-around; margin-bottom: 30px;">
+    <ngx-charts-bar-vertical
+      [scheme]="'vivid'"
+      [results]="chartData"
+      [gradient]="false"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      xAxisLabel="Make"
+      yAxisLabel="Count">
+    </ngx-charts-bar-vertical>
+  </div>
+  
+<h3>EV Data Table</h3>
+<table class="collapsed-table">
+  <tr>
+    <th style="background-color:rgba(25, 25, 25, 0.534); color: white;">VIN</th>
+    <th style="background-color:rgba(25, 25, 25, 0.534); color: white;">Make</th>
+    <th style="background-color:rgba(25, 25, 25, 0.534); color: white;">Model</th>
+    <th style="background-color:rgba(25, 25, 25, 0.534); color: white;">Type</th>
+    <th style="background-color:rgba(25, 25, 25, 0.534); color: white;">Range</th>
+    <th style="background-color:rgba(25, 25, 25, 0.534); color: white;">City</th>
+    <th style="background-color:rgba(25, 25, 25, 0.534); color: white;">Model Year</th>
+    <th style="background-color:rgba(25, 25, 25, 0.534); color: white;">State</th>
+  </tr>
+  <tr *ngFor="let ev of evData">
+    <td>{{ ev['VIN (1-10)'] }}</td>
+    <td>{{ ev.Make }}</td>
+    <td>{{ ev.Model }}</td>
+    <td>{{ ev['Electric Vehicle Type'] }}</td>
+    <td>{{ ev['Electric Range'] }}</td>
+    <td>{{ ev.City }}</td>
+    <td>{{ev['Model Year']}}</td>
+    <td>{{ev.State}}</td>
+  </tr>
+</table>
+
+
+
+
